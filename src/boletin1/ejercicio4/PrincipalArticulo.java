@@ -12,12 +12,12 @@ public class PrincipalArticulo {
 		producto.cuantosQuedan = 8;
 		
 		/*Mostramos al usuario los atributos del producto*/
-		System.out.println(producto.nombre + " - Precio: " + producto.precio + "€ - IVA: " + producto.IVA + "% - PVP: " + (producto.precio + ((producto.precio * producto.IVA) / 100)) + "€");
+		System.out.println(producto.nombre + " - Precio: " + producto.precio + "€ - IVA: " + producto.IVA + "% - PVP: " + (producto.precio + ((producto.precio * producto.IVA) / 100)) + "€ - Stock: " + producto.cuantosQuedan);
 		
 		/*Cambiamos el precio del producto*/
 		producto.precio = 40.50;
 		
 		/*Mostramos al usuario los atributos del producto con el nuevo cambio en el precio*/
-		System.out.println(producto.nombre + " - Precio: " + producto.precio + "€ - IVA: " + producto.IVA + "% - PVP: " + (producto.precio + ((producto.precio * producto.IVA) / 100)) + "€");
+		System.out.println(producto.nombre + " - Precio: " + producto.precio + "€ - IVA: " + producto.IVA + "% - PVP: " + (producto.precio + ((producto.precio * producto.IVA) / 100)) + "€ - Stock: " + producto.cuantosQuedan);
 	}
 }
