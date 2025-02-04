@@ -4,26 +4,14 @@ public class PrincipalRectangulo {
 	public static void main(String[] args) {
 		
 		/*Creamos dos rectangulos llamando a la clase Rectangulo*/
-		Rectangulo rectangulo1 = new Rectangulo();
-		Rectangulo rectangulo2 = new Rectangulo();
+		Rectangulo rectangulo1 = new Rectangulo(0,0,5,5);
+		Rectangulo rectangulo2 = new Rectangulo(7,9,2,3);
 		
 		/*Creamos una variable para almacenar la altura del rectangulo*/
 		int altura;
 		
 		/*Creamos una variable para almacenar el ancho del rectangulo*/
 		int ancho;
-		
-		/*Inicializamos las coordenadas del rectangulo 1*/
-		rectangulo1.x1 = 0;
-		rectangulo1.y1 = 0;
-		rectangulo1.x2 = 5;
-		rectangulo1.y2 = 5;
-		
-		/*Inicializamos las coordenadas del rectangulo 2*/
-		rectangulo2.x1 = 7;
-		rectangulo2.y1 = 9;
-		rectangulo2.x2 = 2;
-		rectangulo2.y2 = 3;
 		
 		/*Indicamos al usuario que son las medidas del rectangulo 1*/
 		System.out.println("Rectangulo 1:");

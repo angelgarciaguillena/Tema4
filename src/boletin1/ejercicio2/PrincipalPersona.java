@@ -5,9 +5,15 @@ import java.util.Scanner;
 public class PrincipalPersona {
 	public static void main(String[] args) {
 		
-		/*Creamos las dos personas llamando a la clase Persona*/
-		Persona persona1 = new Persona();
-		Persona persona2 = new Persona();
+		/*Definimos las dos personas llamando a la clase Persona*/
+		Persona persona1;
+		Persona persona2;
+		
+		/*Creamos las variables necesarias para los atributos de la clase*/
+		String dni;
+		String nombre;
+		String apellidos;
+		int edad;
 		
 		/*Creamos una variable para almacenar si es mayor de edad*/
 		String esMayor;
@@ -20,52 +26,57 @@ public class PrincipalPersona {
 		System.out.println("Introduzca su dni");
 		
 		/*Leemos el dni de la primera persona*/
-		persona1.dni = sc.nextLine();
+		dni = sc.nextLine();
 		
 		/*Pedimos el nombre a la primera persona*/
 		System.out.println("Introduzca su nombre");
 		
 		/*Leemos el nombre de la primera persona*/
-		persona1.nombre = sc.nextLine();
+		nombre = sc.nextLine();
 		
 		/*Pedimos los apellidos a la primera persona*/
 		System.out.println("Introduzca sus apellidos");
 		
 		/*Leemos los apellidos de la primera persona*/
-		persona1.apellidos = sc.nextLine();
+		apellidos = sc.nextLine();
 		
 		/*Pedimos la edad a la primera persona*/
 		System.out.println("Introduzca su edad");
 		
 		/*Leemos los apellidos de la primera persona*/
-		persona1.edad = sc.nextInt();
+		edad = sc.nextInt();
 		sc.nextLine();
 		
+		/*Creamos a la persona 1 y almacenamos los valores de sus atributos*/
+		persona1 = new Persona(dni, nombre, apellidos, edad);
 		
 		/*Persona 2*/
 		/*Pedimos el dni a la segunda persona*/
 		System.out.println("Introduzca su dni");
 		
 		/*Leemos el dni de la primera persona*/
-		persona2.dni = sc.nextLine();
+		dni = sc.nextLine();
 		
 		/*Pedimos el nombre a la segunda persona*/
 		System.out.println("Introduzca su nombre");
 		
 		/*Leemos el nombre de la segunda persona*/
-		persona2.nombre = sc.nextLine();
+		nombre = sc.nextLine();
 		
 		/*Pedimos los apellidos a la segunda persona*/
 		System.out.println("Introduzca sus apellidos");
 		
 		/*Leemos los apellidos de la primera persona*/
-		persona2.apellidos = sc.nextLine();
+		apellidos = sc.nextLine();
 		
 		/*Pedimos la edad a la segunda persona*/
 		System.out.println("Introduzca su edad");
 		
 		/*Leemos los apellidos de la segunda persona*/
-		persona2.edad = sc.nextInt();
+		edad = sc.nextInt();
+		
+		/*Creamos a la persona 2 y almacenamos los valores de sus atributos*/
+		persona2 = new Persona(dni, nombre, apellidos, edad);
 		
 		/*Si la persona1 es mayor de edad almacenar el mensaje sino almacenar el otro*/
 		esMayor = persona1.edad >= 18 ? "es mayor de edad" : "no es mayor de edad";

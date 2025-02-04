@@ -3,22 +3,11 @@ package boletin1.ejercicio1;
 public class PrincipalPunto {
 	public static void main(String[] args) {
 		
-		/*Creamos los tres puntos llamando a la clase Punto*/
-		Punto punto1 = new Punto();
-		Punto punto2 = new Punto();
-		Punto punto3 = new Punto();
+		/*Creamos los tres puntos llamando a la clase Punto con los valores inicializados*/
+		Punto punto1 = new Punto(5, 0);
+		Punto punto2 = new Punto(10, 10);
+		Punto punto3 = new Punto(-3, 7);
 		
-		/*Asignamos valores a las coordenadas del punto 1*/
-		punto1.x = 5;
-		punto1.y = 0;
-		
-		/*Asignamos valores a las coordenadas del punto 2*/
-		punto2.x = 10;
-		punto2.y = 10;
-		
-		/*Asignamos valores a las coordenadas del punto 3*/
-		punto3.x = -3;
-		punto3.y = 7;
 		
 		/*Imprimimos las coordenadas por pantalla*/
 		System.out.println("Punto 1 (" + punto1.x + ", " + punto1.y + ")");
@@ -29,16 +18,16 @@ public class PrincipalPunto {
 		System.out.println();
 		
 		/*Cambiamos los valores de las coordenadas del punto 1*/
-		punto1.x = 5+8;
-		punto1.y = 0-2;
+		punto1.x = punto1.x+8;
+		punto1.y = punto1.y-2;
 		
 		/*Cambiamos los valores de las coordenadas del punto 2*/
-		punto2.x = 10*2;
-		punto2.y = 10/5;
+		punto2.x = punto2.x*2;
+		punto2.y = punto2.y/5;
 		
 		/*Cambiamos los valores de las coordenadas del punto 3*/
-		punto3.x = -3+7;
-		punto3.y = 7-2;
+		punto3.x = punto3.x+7;
+		punto3.y = punto3.y-2;
 		
 		/*Imprimimos las coordenadas por pantalla*/
 		System.out.println("Punto 1 (" + punto1.x + ", " + punto1.y + ")");
