@@ -10,28 +10,28 @@ public class PrincipalPunto {
 		
 		
 		/*Imprimimos las coordenadas por pantalla*/
-		System.out.println("Punto 1 (" + punto1.x + ", " + punto1.y + ")");
-		System.out.println("Punto 2(" + punto2.x + ", " + punto2.y + ")");
-		System.out.println("Punto 3(" + punto3.x + ", " + punto3.y + ")");
+		System.out.println("Punto 1 (" + punto1.getX() + ", " + punto1.getY() + ")");
+		System.out.println("Punto 2(" + punto2.getX() + ", " + punto2.getY() + ")");
+		System.out.println("Punto 3(" + punto3.getX() + ", " + punto3.getY() + ")");
 		
 		/*Hacemos un salto de linea*/
 		System.out.println();
 		
 		/*Cambiamos los valores de las coordenadas del punto 1*/
-		punto1.x = punto1.x+8;
-		punto1.y = punto1.y-2;
+		punto1.setX(punto1.getX()+8);
+		punto1.setY(punto1.getY()-2);
 		
 		/*Cambiamos los valores de las coordenadas del punto 2*/
-		punto2.x = punto2.x*2;
-		punto2.y = punto2.y/5;
+		punto2.setX(punto2.getX()*2);
+		punto2.setY(punto2.getY()/5);
 		
 		/*Cambiamos los valores de las coordenadas del punto 3*/
-		punto3.x = punto3.x+7;
-		punto3.y = punto3.y-2;
+		punto3.setX(punto3.getX()+7);
+		punto3.setY(punto3.getY()-2);
 		
 		/*Imprimimos las coordenadas por pantalla*/
-		System.out.println("Punto 1 (" + punto1.x + ", " + punto1.y + ")");
-		System.out.println("Punto 2(" + punto2.x + ", " + punto2.y + ")");
-		System.out.println("Punto 3(" + punto3.x + ", " + punto3.y + ")");
+		System.out.println("Punto 1 (" + punto1.getX() + ", " + punto1.getY() + ")");
+		System.out.println("Punto 2(" + punto2.getX() + ", " + punto2.getY() + ")");
+		System.out.println("Punto 3(" + punto3.getX() + ", " + punto3.getY() + ")");
 	}
 }

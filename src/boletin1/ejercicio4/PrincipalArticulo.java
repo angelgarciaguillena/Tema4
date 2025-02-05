@@ -8,23 +8,23 @@ public class PrincipalArticulo {
 		Articulo producto2 = new Articulo(null, -2, -5);
 		
 		/*Mostramos al usuario los atributos del producto 1*/
-		System.out.println(producto1.nombre + " - Precio: " + producto1.precio + "€ - IVA: " + producto1.IVA + "% - PVP: " + (producto1.precio + ((producto1.precio * producto1.IVA) / 100)) + "€ - Stock: " + producto1.cuantosQuedan + " unidades");
+		System.out.println(producto1.getNombre() + " - Precio: " + producto1.getPrecio() + "€ - IVA: " + Articulo.IVA + "% - PVP: " + (producto1.getPrecio() + ((producto1.getPrecio() * Articulo.IVA) / 100)) + "€ - Stock: " + producto1.getCuantosQuedan() + " unidades");
 		
 		/*Mostramos al usuario los atributos del producto 2*/
-		System.out.println(producto2.nombre + " - Precio: " + producto2.precio + "€ - IVA: " + producto2.IVA + "% - PVP: " + (producto2.precio + ((producto2.precio * producto2.IVA) / 100)) + "€ - Stock: " + producto2.cuantosQuedan + " unidades");
+		System.out.println(producto2.getNombre() + " - Precio: " + producto2.getPrecio() + "€ - IVA: " + Articulo.IVA + "% - PVP: " + (producto2.getPrecio() + ((producto2.getPrecio() * Articulo.IVA) / 100)) + "€ - Stock: " + producto2.getCuantosQuedan() + " unidades");
 		
 		/*Cambiamos el precio del producto 1*/
-		producto1.precio = 40.50;
+		producto1.setPrecio(40.50);
 	
 		/*Cambiamos los valores a los atributos del producto 2*/
-		producto2.nombre = "Camiseta";
-		producto2.precio = 35;
-		producto2.cuantosQuedan = 5;
+		producto2.setNombre("Camiseta");
+		producto2.setPrecio(35);
+		producto2.setCuantosQuedan(5);
 		
-		/*Mostramos al usuario los atributos del producto 1 con el nuevo cambio en el precio*/
-		System.out.println(producto1.nombre + " - Precio: " + producto1.precio + "€ - IVA: " + producto1.IVA + "% - PVP: " + (producto1.precio + ((producto1.precio * producto1.IVA) / 100)) + "€ - Stock: " + producto1.cuantosQuedan + " unidades");
+		/*Mostramos al usuario los atributos del producto 1 modificado*/
+		System.out.println(producto1.getNombre() + " - Precio: " + producto1.getPrecio() + "€ - IVA: " + Articulo.IVA + "% - PVP: " + (producto1.getPrecio() + ((producto1.getPrecio() * Articulo.IVA) / 100)) + "€ - Stock: " + producto1.getCuantosQuedan() + " unidades");
 		
-		/*Mostramos al usuario los atributos del producto 2 con el nuevo cambio en el precio*/
-		System.out.println(producto2.nombre + " - Precio: " + producto2.precio + "€ - IVA: " + producto2.IVA + "% - PVP: " + (producto2.precio + ((producto2.precio * producto2.IVA) / 100)) + "€ - Stock: " + producto2.cuantosQuedan + " unidades");
+		/*Mostramos al usuario los atributos del producto 2 modificado*/
+		System.out.println(producto2.getNombre() + " - Precio: " + producto2.getPrecio() + "€ - IVA: " + Articulo.IVA + "% - PVP: " + (producto2.getPrecio() + ((producto2.getPrecio() * Articulo.IVA) / 100)) + "€ - Stock: " + producto2.getCuantosQuedan() + " unidades");
 	}
 }

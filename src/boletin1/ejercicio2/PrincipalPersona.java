@@ -79,16 +79,32 @@ public class PrincipalPersona {
 		persona2 = new Persona(dni, nombre, apellidos, edad);
 		
 		/*Si la persona1 es mayor de edad almacenar el mensaje sino almacenar el otro*/
-		esMayor = persona1.edad >= 18 ? "es mayor de edad" : "no es mayor de edad";
+		esMayor = persona1.getEdad() >= 18 ? "es mayor de edad" : "no es mayor de edad";
 		
 		/*Mostramos si la persona1 es mayor o menor de edad*/
-		System.out.println(persona1.nombre + " " + persona1.apellidos + " con DNI " + persona1.dni + " " + esMayor);
+		System.out.println(persona1.getNombre() + " " + persona1.getApellidos() + " con DNI " + persona1.getDni() + " " + esMayor);
 		
 		/*Si la persona2 es mayor de edad almacenar el mensaje sino almacenar el otro*/
-		esMayor = persona2.edad >= 18 ? "es mayor de edad" : "no es mayor de edad";
+		esMayor = persona2.getEdad() >= 18 ? "es mayor de edad" : "no es mayor de edad";
 		
 		/*Mostramos si la persona2 es mayor o menor de edad*/
-		System.out.println(persona2.nombre + " " + persona2.apellidos + " con DNI " + persona2.dni + " " + esMayor);
+		System.out.println(persona2.getNombre() + " " + persona2.getApellidos() + " con DNI " + persona2.getDni() + " " + esMayor);
+		
+		/*Modificamos la edadm de las personas*/
+		persona1.setEdad(persona1.getEdad()+2);
+		persona2.setEdad(persona2.getEdad()-2);
+		
+		/*Si la persona1 es mayor de edad almacenar el mensaje sino almacenar el otro*/
+		esMayor = persona1.getEdad() >= 18 ? "es mayor de edad" : "no es mayor de edad";
+		
+		/*Mostramos si la persona1 es mayor o menor de edad*/
+		System.out.println(persona1.getNombre() + " " + persona1.getApellidos() + " con DNI " + persona1.getDni() + " " + esMayor);
+		
+		/*Si la persona2 es mayor de edad almacenar el mensaje sino almacenar el otro*/
+		esMayor = persona2.getEdad() >= 18 ? "es mayor de edad" : "no es mayor de edad";
+		
+		/*Mostramos si la persona2 es mayor o menor de edad*/
+		System.out.println(persona2.getNombre() + " " + persona2.getApellidos() + " con DNI " + persona2.getDni() + " " + esMayor);
 		
 		/*Cerramos el Scanner*/
 		sc.close();
