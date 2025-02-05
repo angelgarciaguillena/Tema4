@@ -16,7 +16,7 @@ public class Articulo {
 	 * @param precio Precio del producto
 	 * @param cuantosQuedan Numero que indica cuantos articulos quedan en el almacen
 	 */
-	Articulo(String nombre, double precio, int cuantosQuedan){
+	public Articulo(String nombre, double precio, int cuantosQuedan){
 		
 		if(nombre != null && !nombre.isEmpty() && nombre.length() < 20) {
 			this.nombre = nombre;
