@@ -8,6 +8,7 @@ public class PrincipalPersona {
 		/*Definimos las dos personas llamando a la clase Persona*/
 		Persona persona1;
 		Persona persona2;
+		Persona p = new Persona("12345678B", "Angel", "Garcia", 19);
 		
 		/*Creamos las variables necesarias para los atributos de la clase*/
 		String dni;
@@ -15,8 +16,8 @@ public class PrincipalPersona {
 		String apellidos;
 		int edad;
 		
-		/*Creamos una variable para almacenar si es mayor de edad*/
-		String esMayor;
+		/*Creamos una variable para almacenar si es mayor de edad o jubilado*/
+		String  es;
 		
 		/*Creamos el Scanner*/
 		Scanner sc = new Scanner(System.in);
@@ -79,32 +80,47 @@ public class PrincipalPersona {
 		persona2 = new Persona(dni, nombre, apellidos, edad);
 		
 		/*Si la persona1 es mayor de edad almacenar el mensaje sino almacenar el otro*/
-		esMayor = persona1.getEdad() >= 18 ? "es mayor de edad" : "no es mayor de edad";
+		es = persona1.esMayorEdad() ? " Es mayor de edad" : " No es mayor de edad";
 		
 		/*Mostramos si la persona1 es mayor o menor de edad*/
-		System.out.println(persona1.getNombre() + " " + persona1.getApellidos() + " con DNI " + persona1.getDni() + " " + esMayor);
+		System.out.println(persona1.toString() + es);
 		
 		/*Si la persona2 es mayor de edad almacenar el mensaje sino almacenar el otro*/
-		esMayor = persona2.getEdad() >= 18 ? "es mayor de edad" : "no es mayor de edad";
+		es = persona2.esMayorEdad() ? " Es mayor de edad" : " No es mayor de edad";
 		
 		/*Mostramos si la persona2 es mayor o menor de edad*/
-		System.out.println(persona2.getNombre() + " " + persona2.getApellidos() + " con DNI " + persona2.getDni() + " " + esMayor);
+		System.out.println(persona2.toString() + es);
 		
 		/*Modificamos la edadm de las personas*/
 		persona1.setEdad(persona1.getEdad()+2);
 		persona2.setEdad(persona2.getEdad()-2);
 		
 		/*Si la persona1 es mayor de edad almacenar el mensaje sino almacenar el otro*/
-		esMayor = persona1.getEdad() >= 18 ? "es mayor de edad" : "no es mayor de edad";
+		es = persona1.esMayorEdad() ? " Es mayor de edad" : " No es mayor de edad";
 		
 		/*Mostramos si la persona1 es mayor o menor de edad*/
-		System.out.println(persona1.getNombre() + " " + persona1.getApellidos() + " con DNI " + persona1.getDni() + " " + esMayor);
+		System.out.println(persona1.toString() + es);
 		
 		/*Si la persona2 es mayor de edad almacenar el mensaje sino almacenar el otro*/
-		esMayor = persona2.getEdad() >= 18 ? "es mayor de edad" : "no es mayor de edad";
+		es = persona2.esMayorEdad() ? " Es mayor de edad" : " No es mayor de edad";
 		
 		/*Mostramos si la persona2 es mayor o menor de edad*/
-		System.out.println(persona2.getNombre() + " " + persona2.getApellidos() + " con DNI " + persona2.getDni() + " " + esMayor);
+		System.out.println(persona2.toString() + es);
+		
+		/*Si la persona1 es jubilado almacenar el mensaje sino almacenar el otro*/
+		es = persona1.esJubilado() ? " Es jubilado" : " No es jubilado";
+		
+		/*Mostramos si la persona1 es mayor o menor de edad*/
+		System.out.println(persona1.toString() + es);
+		
+		/*Si la persona2 es jubilado almacenar el mensaje sino almacenar el otro*/
+		es = persona2.esJubilado() ? " Es jubilado" : " No es jubilado";
+		
+		/*Mostramos si la persona2 es mayor o menor de edad*/
+		System.out.println(persona2.toString() + es);
+		
+		/*Mostramos la diferencioa de edad entre la persona 1 y la persona p*/
+		System.out.println(persona1.diferenciaEdad(p));
 		
 		/*Cerramos el Scanner*/
 		sc.close();

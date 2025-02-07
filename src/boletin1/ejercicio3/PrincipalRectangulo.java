@@ -7,29 +7,17 @@ public class PrincipalRectangulo {
 		Rectangulo rectangulo1 = new Rectangulo(0,0,5,5);
 		Rectangulo rectangulo2 = new Rectangulo(7,9,2,3);
 		
-		/*Creamos una variable para almacenar la altura del rectangulo*/
-		int altura;
-		
-		/*Creamos una variable para almacenar el ancho del rectangulo*/
-		int ancho;
-		
 		/*Indicamos al usuario que son las medidas del rectangulo 1*/
 		System.out.println("Rectangulo 1:");
 		
-		/*Almacenamos el ancho del rectangulo 1*/
-		ancho = Math.abs(rectangulo1.getX2() - rectangulo1.getX1());
-		
-		/*Almacenamos la altura del rectangulo 1*/
-		altura = Math.abs(rectangulo1.getY2() - rectangulo1.getY1());
-		
 		/*Mostramos las coordenadas del rectangulo 1*/
-		System.out.println("Coordenadas (" + rectangulo1.getX1() + "," + rectangulo1.getY1() + "),(" + rectangulo1.getX2() + "," + rectangulo1.getY2() + ")");
+		System.out.println(rectangulo1.toString());
 		
 		/*Mostramos el perimetro del rectangulo 1*/
-		System.out.println("Perimetro: " + ((altura * 2) + (ancho * 2)) + " metros");
+		System.out.println("Perimetro: " + rectangulo1.getPerimetro() + " metros");
 		
 		/*Mostramos el area del rectangulo 1*/
-		System.out.println("Area: " + (altura * ancho) + " metros cuadrados");
+		System.out.println("Area: " + rectangulo1.getArea() + " metros cuadrados");
 		
 		/*Hacemos un salto de linea*/
 		System.out.println();
@@ -38,20 +26,14 @@ public class PrincipalRectangulo {
 		/*Indicamos al usuario que son las medidas del rectangulo 2*/
 		System.out.println("Rectangulo 2:");
 		
-		/*Almacenamos el ancho del rectangulo 2*/
-		ancho = Math.abs(rectangulo2.getX2() - rectangulo2.getX1());
-		
-		/*Almacenamos la altura del rectangulo 2*/
-		altura = Math.abs(rectangulo2.getY2() - rectangulo2.getY1());
-		
 		/*Mostramos las coordenadas del rectangulo 2*/
-		System.out.println("Coordenadas (" + rectangulo2.getX1() + "," + rectangulo2.getY1() + "),(" + rectangulo2.getX2() + "," + rectangulo2.getY2() + ")");
+		System.out.println(rectangulo2.toString());
 		
 		/*Mostramos el perimetro del rectangulo 2*/
-		System.out.println("Perimetro: " + ((altura * 2) + (ancho * 2)) + " metros");
+		System.out.println("Perimetro: " +  rectangulo2.getPerimetro() + " metros");
 		
 		/*Mostramos el area del rectangulo2*/
-		System.out.println("Area: " + (altura * ancho) + " metros cuadrados");
+		System.out.println("Area: " + rectangulo2.getArea() + " metros cuadrados");
 		
 		/*Hacemos un salto de line*/
 		System.out.println();
@@ -71,20 +53,14 @@ public class PrincipalRectangulo {
 		/*Indicamos al usuario que son las medidas del rectangulo 1 modificado*/
 		System.out.println("Rectangulo 1 modificado:");
 		
-		/*Almacenamos el ancho del rectangulo 1*/
-		ancho = Math.abs(rectangulo1.getX2() - rectangulo1.getX1());
-		
-		/*Almacenamos la altura del rectangulo 1*/
-		altura = Math.abs(rectangulo1.getY2() - rectangulo1.getY1());
-		
 		/*Mostramos las coordenadas del rectangulo 1*/
-		System.out.println("Coordenadas (" + rectangulo1.getX1() + "," + rectangulo1.getY1() + "),(" + rectangulo1.getX2() + "," + rectangulo1.getY2() + ")");
+		System.out.println(rectangulo1.toString());
 		
 		/*Mostramos el perimetro del rectangulo 1*/
-		System.out.println("Perimetro: " + ((altura * 2) + (ancho * 2)) + " metros");
+		System.out.println("Perimetro: " + rectangulo1.getPerimetro() + " metros");
 		
 		/*Mostramos el area del rectangulo 1*/
-		System.out.println("Area: " + (altura * ancho) + " metros cuadrados");
+		System.out.println("Area: " + rectangulo1.getArea() + " metros cuadrados");
 		
 		/*Hacemos un salto de linea*/
 		System.out.println();
@@ -93,19 +69,13 @@ public class PrincipalRectangulo {
 		/*Indicamos al usuario que son las medidas del rectangulo 2 modificado*/
 		System.out.println("Rectangulo 2 modificado:");
 		
-		/*Almacenamos el ancho del rectangulo 2*/
-		ancho = Math.abs(rectangulo2.getX2() - rectangulo2.getX1());
-		
-		/*Almacenamos la altura del rectangulo 2*/
-		altura = Math.abs(rectangulo2.getY2() - rectangulo2.getY1());
-		
 		/*Mostramos las coordenadas del rectangulo 2*/
-		System.out.println("Coordenadas (" + rectangulo2.getX1() + "," + rectangulo2.getY1() + "),(" + rectangulo2.getX2() + "," + rectangulo2.getY2() + ")");
+		System.out.println(rectangulo2.toString());
 		
 		/*Mostramos el perimetro del rectangulo 2*/
-		System.out.println("Perimetro: " + ((altura * 2) + (ancho * 2)) + " metros");
+		System.out.println("Perimetro: " + rectangulo2.getPerimetro() + " metros");
 		
 		/*Mostramos el area del rectangulo2*/
-		System.out.println("Area: " + (altura * ancho) + " metros cuadrados");
+		System.out.println("Area: " + rectangulo2.getArea() + " metros cuadrados");
 	}
 }

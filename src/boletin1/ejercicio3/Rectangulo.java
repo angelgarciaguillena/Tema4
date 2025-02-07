@@ -109,4 +109,40 @@ public class Rectangulo {
 			this.y2 = y2;
 		}
 	}
+	
+	/**
+	 * Nos da el perimetro del rectangulo
+	 * 
+	 * @return Devuelve el perimetro
+	 */
+	public double getPerimetro() {
+		double perimetro;
+		perimetro = (Math.abs(this.x2 - this.x1) * 2) + (Math.abs(this.y2 - this.y1) * 2);
+		return perimetro;
+	}
+	
+	/**
+	 * Nos da el area del rectangulo
+	 *
+	 * @return Devuelve el area
+	 */
+	public double getArea() {
+		double area;
+		area = Math.abs(this.x2 - this.x1) * (Math.abs(this.y2 - this.y1));
+		return area;
+	}
+	
+	/**
+	 *  Devuelve la cadena con la informacion del rectangulo
+	 * 
+	 * @return Devuelve la cadena
+	 */
+	public String toString() {
+		String cadena;
+		cadena = "";
+		cadena += "Coordenadas (" + this.x1 + "," + this.y1 + "),(" + this.x2 + "," + this.y2 + ")"; 
+		return cadena;
+	}
+	
+	
 }

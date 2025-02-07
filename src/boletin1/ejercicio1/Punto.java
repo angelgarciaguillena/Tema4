@@ -52,6 +52,53 @@ public class Punto {
 	public void setY(int y) {
 		this.y = y;
 	}
-
 	
+	/**
+	 * Modifica ambas coordenadas
+	 * 
+	 * @param x Coordenada x
+	 * @param y Coordenada y
+	 */
+	public void setXY(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+	
+	
+	/**
+	 * Desplaza el punto la cantidad
+	 * 
+	 * @param dx Diferencia de x
+	 * @param dy Diferencia de y
+	 */
+	public void desplaza(int dx, int dy) {
+		this.x = x + dx;
+		this.y = y + dy;
+	}
+	
+	/**
+	 * Calcula y devuelve la distancia entre el propio objeto y otro objeto
+	 * 
+	 * @param p Objeto P
+	 * @return Devuelve la distancia entre los objetos
+	 */
+	public double distancia(Punto p) {
+		double distancia;
+		
+		distancia = Math.sqrt(Math.pow((this.x - p.x), 2) + Math.pow((this.y - p.y), 2));
+		return distancia;
+	}
+	
+	/**
+	 * Devuelve una cadena con los valores de las coordenadas
+	 * 
+	 * @return Devuelve la cadena con las coordenadas
+	 */
+	public String toString() {
+		
+		String cadena;
+		cadena = "";
+		cadena += "(" + x + "," + y + ")"; 
+		return cadena;
+	}
 }

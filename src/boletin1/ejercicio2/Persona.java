@@ -105,4 +105,50 @@ public class Persona {
 			this.edad = edad;
 		}
 	}
+	
+	/**
+	 * Devuelve true si es mayor de edad (false si no)
+	 * 
+	 * @return Devuelve si es mayor
+	 */
+	public boolean esMayorEdad() {
+		boolean esMayor;
+		esMayor = edad >= 18 ? true : false;
+		return esMayor;
+	}
+	
+	/**
+	 * Devuelve true si tiene 65 años o más (false si no)
+	 * 
+	 * @return Devuelve si es jubilado
+	 */
+	public boolean esJubilado() {
+		boolean esJubilado;
+		esJubilado = edad >= 65 ? true : false;
+		return esJubilado;
+	}
+	
+	/**
+	 * Devuelve la diferencia de edad entre la persona y p
+	 * 
+	 * @param p Objeto Persona
+	 * @return Devuelve la diferencia de edad
+	 */
+	public int diferenciaEdad(Persona p) {
+		int diferenciaEdad;
+		diferenciaEdad = this.edad - p.edad;
+		return diferenciaEdad;
+	}
+	
+	/**
+	 * Devuelve una cadena con la información del objeto
+	 * 
+	 * @return Devuelve la cadena
+	 */
+	public String toString() {
+		String cadena;
+		cadena = "";
+		cadena += "DNI: " + dni + " Nombre: " + nombre + " Apellidos: " + apellidos + " Edad: " + edad;
+		return cadena;
+	}
 }

@@ -7,12 +7,32 @@ public class PrincipalPunto {
 		Punto punto1 = new Punto(5, 0);
 		Punto punto2 = new Punto(10, 10);
 		Punto punto3 = new Punto(-3, 7);
+		Punto p = new Punto(10, 10);
 		
+		/*Creamos una variable para almacenar la distancia*/
+		double distancia;
 		
 		/*Imprimimos las coordenadas por pantalla*/
-		System.out.println("Punto 1 (" + punto1.getX() + ", " + punto1.getY() + ")");
-		System.out.println("Punto 2(" + punto2.getX() + ", " + punto2.getY() + ")");
-		System.out.println("Punto 3(" + punto3.getX() + ", " + punto3.getY() + ")");
+		System.out.println(punto1.toString());
+		System.out.println(punto2.toString());
+		System.out.println(punto3.toString());
+		
+		/*Hacemos un salto de linea*/
+		System.out.println();
+		
+		/*Cambiamos los valores de las coordenadas del punto 1*/
+		punto1.setXY(3,6);
+		
+		/*Cambiamos los valores de las coordenadas del punto 2*/
+		punto2.setXY(4,8);
+		
+		/*Cambiamos los valores de las coordenadas del punto 3*/
+		punto3.setXY(2,4);
+		
+		/*Imprimimos las coordenadas por pantalla*/
+		System.out.println(punto1.toString());
+		System.out.println(punto2.toString());
+		System.out.println(punto3.toString());
 		
 		/*Hacemos un salto de linea*/
 		System.out.println();
@@ -30,8 +50,37 @@ public class PrincipalPunto {
 		punto3.setY(punto3.getY()-2);
 		
 		/*Imprimimos las coordenadas por pantalla*/
-		System.out.println("Punto 1 (" + punto1.getX() + ", " + punto1.getY() + ")");
-		System.out.println("Punto 2(" + punto2.getX() + ", " + punto2.getY() + ")");
-		System.out.println("Punto 3(" + punto3.getX() + ", " + punto3.getY() + ")");
+		System.out.println(punto1.toString());
+		System.out.println(punto2.toString());
+		System.out.println(punto3.toString());
+		
+		/*Hacemos un salto de linea*/
+		System.out.println();
+		
+		/*Cambiamos los valores de las coordenadas del punto 1*/
+		punto1.desplaza(4, 1);
+		
+		/*Cambiamos los valores de las coordenadas del punto 2*/
+		punto2.desplaza(3, 3);
+		
+		/*Cambiamos los valores de las coordenadas del punto 3*/
+		punto3.desplaza(6, 7);
+		
+		/*Imprimimos las coordenadas por pantalla*/
+		System.out.println(punto1.toString());
+		System.out.println(punto2.toString());
+		System.out.println(punto3.toString());
+		
+		/*Comparamos la distancia entre el punto 1 y el punto P y lo mostramos por pantalla*/
+		distancia = punto1.distancia(p);
+		System.out.println("La distancia es " + distancia);
+		
+		/*Hacemos un salto de linea*/
+		System.out.println();
+		
+		/*Imprimimos las coordenadas por pantalla*/
+		System.out.println(punto1.toString());
+		System.out.println(punto2.toString());
+		System.out.println(punto3.toString());
 	}
 }
