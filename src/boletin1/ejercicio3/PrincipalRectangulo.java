@@ -39,17 +39,12 @@ public class PrincipalRectangulo {
 		System.out.println();
 		
 		/*Cambiamos los datos del rectangulo 1*/
-		rectangulo1.setX1(rectangulo1.getX1() + 3);
-		rectangulo1.setY1(rectangulo1.getY1() - 2);
-		rectangulo1.setX2(rectangulo1.getX2() / 5);
-		rectangulo1.setY2(rectangulo1.getY2() * 2);
+		rectangulo1.setX1X2(rectangulo1.getX1() + 3, rectangulo1.getX2() / 5);
+		rectangulo1.setY1Y2(rectangulo1.getY1() - 2, rectangulo1.getY2() * 2);
 		
 		/*Cambiamos los datos del rectangulo 2*/
-		rectangulo2.setX1(rectangulo2.getX1() + 7);
-		rectangulo2.setY1(rectangulo2.getY1() - 4);
-		rectangulo2.setX2(rectangulo2.getX2() / 2);
-		rectangulo2.setY2(rectangulo2.getY2() * 2);
-		
+		rectangulo2.setX1X2Y1Y2(rectangulo2.getX1() - 5, rectangulo2.getX2() + 7, rectangulo2.getY1() / 3, rectangulo2.getY2() * 2);
+	
 		/*Indicamos al usuario que son las medidas del rectangulo 1 modificado*/
 		System.out.println("Rectangulo 1 modificado:");
 		
