@@ -90,4 +90,51 @@ public class Articulo {
 			this.cuantosQuedan = cuantosQuedan;
 		}
 	}
+	
+	/**
+	 * Calclamos el precio total del producto y lo devolvemos
+	 * 
+	 * @return Devuelve el PVP
+	 */
+	public double getPVP() {
+		double pvp;
+		pvp = 0;
+		pvp = precio + ((precio * IVA) / 100);
+		return pvp;
+	}
+	
+	/**
+	 * Calcula el precio del producto con un descuento y lo devuelve
+	 * 
+	 * @param descuento Descuento del producto
+	 * @return Devuelve el precio del producto con el descuento
+	 */
+	public double getPVPDescuento(int descuento) {
+		double pvpDescuento;
+		pvpDescuento = 0;
+		pvpDescuento = precio + ((precio * IVA) / 100) - ((precio * descuento) / 100);
+		return pvpDescuento;
+	}
+	
+	/**
+	 * Actuaiza el valor del stock segun los que haya comprado el usuario
+	 * 
+	 * @param comprados Productos comprados por el usuario
+	 */
+	public void vende(int comprados) {
+		if(cuantosQuedan - comprados >= 0) {
+			this.cuantosQuedan = cuantosQuedan - comprados;
+		}
+	}
+	
+	/**
+	 * Devolvemos la informacion del producto
+	 * 
+	 * @return Devuelve la cadena con la informacion
+	 */
+	public String toString() {
+		String cadena;
+		cadena = nombre + " - Precio: " + precio + "€ - IVA: " + Articulo.IVA + "% - PVP: " + "- Stock: " + cuantosQuedan + " unidades";
+		return cadena;
+	}
 }
