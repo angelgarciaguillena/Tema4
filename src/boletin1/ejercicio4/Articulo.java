@@ -117,13 +117,28 @@ public class Articulo {
 	}
 	
 	/**
-	 * Actuaiza el valor del stock segun los que haya comprado el usuario
+	 * Actualiza el valor del stock segun los que haya comprado el usuario si es valido y
+	 * devolvemos true si se ha realizado o false si no se ha realizado
 	 * 
 	 * @param comprados Productos comprados por el usuario
 	 */
-	public void vende(int comprados) {
+	public boolean vende(int comprados) {
+		boolean esValido = false;
 		if(cuantosQuedan - comprados >= 0) {
 			this.cuantosQuedan = cuantosQuedan - comprados;
+			esValido = true;
+		}
+		return esValido;
+	}
+	
+	/**
+	 * Actualizamos el stock disponible segun el numero de unidades que dice el usuario que hay disponible si es valido
+	 * 
+	 * @param cantidad Numero de unidades que hay de un producto
+	 */
+	public void almacenar(int cantidad) {
+		if(cuantosQuedan - cantidad >= 0) {
+			this.cuantosQuedan = cuantosQuedan - cantidad;
 		}
 	}
 	
