@@ -14,14 +14,14 @@ public class AlumnoPrincipal {
 		System.out.println(alumno3.toString());
 		
 		/*Mostramos si los alumnos 1 y 2 son iguales o no*/
-		if(alumno1.getNombre().equals(alumno2.getNombre())) {
+		if(alumno1.equals(alumno2)) {
 			System.out.println("Los alumnos son iguales");
 		} else {
 			System.out.println("Los alumnos no son iguales");
 		}
 		
 		/*Mostramos si los alumnos 1 y 3 son iguales o no*/
-		if(alumno1.getNombre().equals(alumno3.getNombre())) {
+		if(alumno1.equals(alumno3)) {
 			System.out.println("Los alumnos son iguales");
 		} else {
 			System.out.println("Los alumnos no son iguales");

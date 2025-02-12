@@ -40,13 +40,13 @@ public class CuentaCorrientePrincipal {
 		System.out.println(cuenta3.toString());
 		
 		/*Mostramos si las cuentas son iguales*/
-		if(cuenta1.getDni() == cuenta2.getDni() && cuenta1.getNombre().equalsIgnoreCase(cuenta2.getNombre())) {
+		if(cuenta1.equals(cuenta2)) {
 			System.out.println("Las cuentas son iguales");
 		} else {
 			System.out.println("Las cuentas no son iguales");
 		}
 		
-		if(cuenta1.getDni() == cuenta3.getDni() && cuenta1.getNombre().equalsIgnoreCase(cuenta3.getNombre())) {
+		if(cuenta1.equals(cuenta3)) {
 			System.out.println("Las cuentas son iguales");
 		} else {
 			System.out.println("Las cuentas no son iguales");

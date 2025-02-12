@@ -9,19 +9,19 @@ public class PizzaPrincipal {
 		Pizza pizza3 = new Pizza(203949, "Mediana", "Funghi", "Pedida");
 		
 		/*Mostramos la informacion de las pizzas*/
-		System.out.println(pizza1.toString());
-		System.out.println(pizza2.toString());
-		System.out.println(pizza3.toString());
+		System.out.println(pizza1);
+		System.out.println(pizza2);
+		System.out.println(pizza3);
 		
 		/*Comprobamos si las pizzas 1 y 2 son iguales*/
-		if(pizza1.getCodigo() == pizza2.getCodigo()) {
+		if(pizza1.equals(pizza2)) {
 			System.out.println("Las pizzas son iguales");
 		} else {
 			System.out.println("Las pizzas no son iguales");
 		}
 		
 		/*Comprobamos si las pizzas 1 y 3 son iguales*/
-		if(pizza1.getCodigo() == (pizza3.getCodigo())) {
+		if(pizza1.equals(pizza3)) {
 			System.out.println("Las pizzas son iguales");
 		} else {
 			System.out.println("Las pizzas no son iguales");
