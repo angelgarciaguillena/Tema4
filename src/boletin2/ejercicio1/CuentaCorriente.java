@@ -83,10 +83,12 @@ public class CuentaCorriente {
 			this.saldo = saldo;
 		}
 		
-		if(nacionalidad.equalsIgnoreCase("Extranjera")) {
-			this.nacionalidad = Nacionalidad.EXTRANJERA;
-		} else {
-			this.nacionalidad = Nacionalidad.ESPAÑOLA;
+		if(nacionalidad != null) {
+			if(nacionalidad.equalsIgnoreCase("Extranjera")) {
+				this.nacionalidad = Nacionalidad.EXTRANJERA;
+			} else {
+				this.nacionalidad = Nacionalidad.ESPAÑOLA;
+			}
 		}
 	}
 	
@@ -154,10 +156,12 @@ public class CuentaCorriente {
 	 * @param nacionalidad Nacionalidad de la persona
 	 */
 	public void setNacionalidad(String nacionalidad) {
-		if(nacionalidad.equalsIgnoreCase("Extranjera")) {
-			this.nacionalidad = Nacionalidad.EXTRANJERA;
-		} else {
-			this.nacionalidad = Nacionalidad.ESPAÑOLA;
+		if(nacionalidad != null) {
+			if(nacionalidad.equalsIgnoreCase("Extranjera")) {
+				this.nacionalidad = Nacionalidad.EXTRANJERA;
+			} else {
+				this.nacionalidad = Nacionalidad.ESPAÑOLA;
+			}
 		}
 	}
 	

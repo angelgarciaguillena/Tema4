@@ -60,7 +60,7 @@ public class Alumno {
 	 * @param notaMedia
 	 */
 	public void setNotaMedia(double notaMedia) {
-		if(notaMedia >= 0) {
+		if(notaMedia >= 0 && notaMedia <= 10) {
 			this.notaMedia = notaMedia;
 		}
 	}

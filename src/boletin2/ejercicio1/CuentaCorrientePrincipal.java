@@ -40,16 +40,29 @@ public class CuentaCorrientePrincipal {
 		System.out.println(cuenta3.toString());
 		
 		/*Mostramos si las cuentas son iguales*/
-		if(cuenta1.equals(cuenta2)) {
+		if(cuenta1.getDni() == cuenta2.getDni() && cuenta1.getNombre().equalsIgnoreCase(cuenta2.getNombre())) {
 			System.out.println("Las cuentas son iguales");
 		} else {
 			System.out.println("Las cuentas no son iguales");
 		}
 		
-		if(cuenta1.equals(cuenta3)) {
+		if(cuenta1.getDni() == cuenta3.getDni() && cuenta1.getNombre().equalsIgnoreCase(cuenta3.getNombre())) {
 			System.out.println("Las cuentas son iguales");
 		} else {
 			System.out.println("Las cuentas no son iguales");
 		}
+		
+		/*Cambiamos los valores*/
+		cuenta1.setNombre(null);
+		cuenta1.setSaldo(-8);
+		cuenta1.setNacionalidad("Marroqui");
+		
+		cuenta2.setNombre("Pepe");
+		cuenta2.setSaldo(2500);
+		cuenta2.setNacionalidad("Española");
+		
+		/*Mostramos la informacion de las cuentas*/
+		System.out.println("DNI del titular: " + cuenta1.getDni() + " - Nombre del titular de la cuenta: " + cuenta1.getNombre() + " - Saldo de la cuenta: " + cuenta1.getSaldo() + " - Nacionalidad: " + cuenta1.getNacionalidad());
+		System.out.println("DNI del titular: " + cuenta2.getDni() + " - Nombre del titular de la cuenta: " + cuenta2.getNombre() + " - Saldo de la cuenta: " + cuenta2.getSaldo() + " - Nacionalidad: " + cuenta2.getNacionalidad());
 	}
 }
