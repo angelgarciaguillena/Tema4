@@ -11,8 +11,10 @@ public class SumaEnteros {
 	static int sumaEnteros(int numero1) {
 		int suma = 0;
 		
-		for(int i = 0; i < numero1; i++){
-			suma += i;
+		if(numero1 == 1) {
+			suma = 1;
+		} else {
+			suma = suma + numero1;
 		}
 		
 		return suma;
