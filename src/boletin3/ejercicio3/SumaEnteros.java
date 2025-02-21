@@ -8,14 +8,14 @@ public class SumaEnteros {
 	 * @param numero Numero limite
 	 * @return La suma de los numeros
 	 */
-	static int sumaEnteros(int numero1) {
+	static int sumaEnteros(int numero) {
 		
-		int suma = 0;
+		int suma;
 		
-		if(numero1 == 1) {
-			suma = 1;
+		if(numero == 0 || numero == 1) {
+			suma = numero;
 		} else {
-			suma += numero1 + sumaEnteros(numero1 - 1);
+			suma = numero + sumaEnteros(numero - 1);
 		}
 		
 		return suma;
@@ -30,12 +30,12 @@ public class SumaEnteros {
 	 */
 	static int sumaEnteros(int numero1, int numero2) {
 		
-		int suma = 0;
+		int suma;
 		
 		if(numero2 == numero1) {
 			suma = numero1;
 		} else {
-			suma += numero2 + sumaEnteros(numero1, numero2 - 1);
+			suma = numero2 + sumaEnteros(numero1, numero2 - 1);
 		}
 		
 		return suma;

@@ -24,7 +24,7 @@ public class NumerosAleatorios {
 		if(cantidad == 0) {
 			cantidad = 1;
 		} else {
-			cadena += numero + " " + numerosAleatorios(cantidad - 1);
+			cadena = numero + " " + numerosAleatorios(cantidad - 1);
 		}
 		
 		return cadena;
@@ -51,7 +51,7 @@ public class NumerosAleatorios {
 		if(cantidad == 0) {
 			cantidad = 1;
 		} else {
-			cadena += numero + " " + numerosAleatorios(cantidad - 1, maximo);
+			cadena = numero + " " + numerosAleatorios(cantidad - 1, maximo);
 		}
 		
 		return cadena;
@@ -79,7 +79,7 @@ public class NumerosAleatorios {
 		if(cantidad == 0) {
 			cantidad = 1;
 		} else {
-			cadena += numero + " " + numerosAleatorios(cantidad - 1, minimo, maximo);
+			cadena = numero + " " + numerosAleatorios(cantidad - 1, minimo, maximo);
 		}
 		
 		return cadena;
