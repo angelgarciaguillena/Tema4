@@ -9,12 +9,13 @@ public class SumaEnteros {
 	 * @return La suma de los numeros
 	 */
 	static int sumaEnteros(int numero1) {
+		
 		int suma = 0;
 		
 		if(numero1 == 1) {
 			suma = 1;
 		} else {
-			suma = suma + numero1;
+			suma += numero1 + sumaEnteros(numero1 - 1);
 		}
 		
 		return suma;
@@ -28,10 +29,13 @@ public class SumaEnteros {
 	 * @return La suma de los numeros entre el rango
 	 */
 	static int sumaEnteros(int numero1, int numero2) {
+		
 		int suma = 0;
 		
-		for(int i = numero1; i < numero2; i++) {
-			suma += i;
+		if(numero2 == numero1) {
+			suma = numero1;
+		} else {
+			suma += numero2 + sumaEnteros(numero1, numero2 - 1);
 		}
 		
 		return suma;
