@@ -149,7 +149,7 @@ public class Articulo {
 	 */
 	public String toString() {
 		String cadena;
-		cadena = nombre + " - Precio: " + precio + "€ - IVA: " + Articulo.IVA + "% - PVP: " + "- Stock: " + cuantosQuedan + " unidades";
+		cadena = nombre + " - Precio: " + precio + "€ - IVA: " + Articulo.IVA + "% - PVP: " + getPVP() + "€ - Stock: " + cuantosQuedan + " unidades";
 		return cadena;
 	}
 }

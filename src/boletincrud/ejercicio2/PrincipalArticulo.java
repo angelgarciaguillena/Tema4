@@ -213,7 +213,7 @@ public class PrincipalArticulo {
 				nombre = sc.nextLine();
 				
 				/*Pedimos al usuario que introduzca su precio*/
-				System.out.println("introduce el precio del producto");
+				System.out.println("Introduce el precio del producto");
 				
 				/*Leemos el precio del producto*/
 				precio = sc.nextDouble();
@@ -223,6 +223,7 @@ public class PrincipalArticulo {
 				
 				/*Leemos la cantidad del articulo*/
 				cantidad = sc.nextInt();
+				sc.nextLine();
 				
 				/*Añadimos los datos al articulo*/
 				articulo = new Articulo(nombre, precio, cantidad);
@@ -264,10 +265,11 @@ public class PrincipalArticulo {
 				nombre = sc.nextLine();
 				
 				/*Pedimos al usuario que introduzca su precio*/
-				System.out.println("introduce el precio del producto");
+				System.out.println("Introduce el precio del producto");
 				
 				/*Leemos el precio del producto*/
 				precio = sc.nextDouble();
+				sc.nextLine();
 				
 				/*Llamamos a la funcion para modificar el articulo*/
 				if(GESTISIMAL.modificarArticulo(nombre, precio)) {
@@ -291,6 +293,7 @@ public class PrincipalArticulo {
 				
 				/*Leemos la cantidad del articulo*/
 				cambio = sc.nextInt();
+				sc.nextLine();
 				
 				/*Llamamos a la funcion para añadir la cantidad de entrada al stock*/
 				if(GESTISIMAL.entradaMercancia(nombre, cambio)) {
@@ -314,6 +317,7 @@ public class PrincipalArticulo {
 				
 				/*Leemos la cantidad del articulo*/
 				cambio = sc.nextInt();
+				sc.nextLine();
 				
 				/*Llamamos a la funcion para eliminar la cantidad de salida al stock*/
 				if(GESTISIMAL.salidaMercancia(nombre, cambio)) {
@@ -335,7 +339,7 @@ public class PrincipalArticulo {
 				System.out.println("Opcion no valida");
 			}
 			}
-		} while(opcion != "g");
+		} while(!opcion.equals("g"));
 	
 		/*Cerramos el Scanner*/
 		sc.close();
