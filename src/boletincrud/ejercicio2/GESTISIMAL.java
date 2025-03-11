@@ -5,7 +5,9 @@ import java.util.Set;
 
 public class GESTISIMAL {
 	
-	/*Creamos una lista para almacenar los articulos*/
+	/**
+	 * Creamos una lista para almacenar los articulos
+	 */
 	private static Set<Articulo> articulos = new HashSet<Articulo>();
 	
 	/**

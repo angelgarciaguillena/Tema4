@@ -2,10 +2,14 @@ package boletincrud.ejercicio1;
 
 public class Alumno {
 	
-	/*Nombre del alumno*/
+	/**
+	 * Nombre del alumno
+	 */
 	private String nombre = "No especificado";
 	
-	/*Nota media del alumno*/
+	/**
+	 * Nota media del alumno
+	 */
 	private double notaMedia = 0;
 	
 	/**

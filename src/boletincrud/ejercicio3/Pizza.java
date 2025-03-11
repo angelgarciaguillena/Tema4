@@ -2,29 +2,43 @@ package boletincrud.ejercicio3;
 
 public class Pizza {
 	
-	/*Codigo de la pizza*/
+	/**
+	 * Codigo de la pizza
+	 */
 	private int codigo = 0;
-	
-	/*Tamaño de la pizza*/
+
+	/**
+	 * Tamaño de la pizza
+	 */
 	Tamaño tamaño = Tamaño.MEDIANA;
 	
-	/*Tipo de pizza*/
+	/**
+	 * Tipo de pizza
+	 */
 	Tipo tipo = Tipo.MARGARITA;
 	
-	/*Estado del pedido*/
+	/**
+	 * Estado del pedido
+	 */
 	Estado estado = Estado.PEDIDA;
 	
-	/*Posibles valores del tamaño de la pizza*/
+	/**
+	 * Posibles valores del tamaño de la pizza
+	 */
 	enum Tamaño{
 		MEDIANA, FAMILIAR
 	}
 	
-	/*Posibles valores del tipo de pizza*/
+	/**
+	 * Posibles valores del tipo de pizza
+	 */
 	enum Tipo{
 		MARGARITA, CUATROQUESOS, FUNGHI
 	}
 	
-	/*Posibles valores del estado del pedido*/
+	/**
+	 * Posibles valores del estado del pedido
+	 */
 	enum Estado{
 		PEDIDA, SERVIDA
 	}

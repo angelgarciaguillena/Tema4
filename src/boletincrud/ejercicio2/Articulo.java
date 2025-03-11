@@ -2,10 +2,24 @@ package boletincrud.ejercicio2;
 
 public class Articulo {
 	
-	/*Inicializamos los atributos de la clase Articulo*/
+	/**
+	 * Nombre del articulo
+	 */
 	private String nombre = "Articulo";
+	
+	/**
+	 * Precio del articulo
+	 */
 	private double precio = 0;
+	
+	/**
+	 * IVA del articulo
+	 */
 	public static final int IVA = 21;
+	
+	/**
+	 * Stock del articulo
+	 */
 	private int cuantosQuedan = 0;
 	
 	/**

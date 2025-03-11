@@ -5,7 +5,9 @@ import java.util.Set;
 
 public class AlumnoCRUD {
 	
-	/*Creamos una lista para almacenar los alumnos*/
+	/**
+	 * Creamos una lista para almacenar los alumnos
+	 */
 	private static Set<Alumno> alumnos = new HashSet<Alumno>();
 	
 	/**
