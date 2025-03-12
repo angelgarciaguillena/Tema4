@@ -35,7 +35,7 @@ public class PizzaCRUD {
 	 * @param codigo Codigo de la pizza
 	 * @return La pizza que queremos buscar
 	 */
-	public static Pizza buscarPizza(int codigo) {
+	private static Pizza buscarPizza(int codigo) {
 		Pizza pizza = null;
 		
 		for(Pizza pizzas : pizzas) {

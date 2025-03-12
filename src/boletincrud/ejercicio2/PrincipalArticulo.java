@@ -3,6 +3,10 @@ package boletincrud.ejercicio2;
 import java.util.Scanner;
 
 public class PrincipalArticulo {
+	
+	/*Creamos un Scanner*/
+	static Scanner sc = new Scanner(System.in);
+	
 	public static void main(String[] args) {
 		
 		/*Creamos un nuevo articulo*/
@@ -10,9 +14,6 @@ public class PrincipalArticulo {
 		
 		/* Creamos una variable para almacenar la opcion del usuario */
 		String opcion;
-		
-		/*Creamos una variable para almacenar cuantos articulos hay de un producto*/
-		int cantidad;
 		
 		/*Creamos una variable que almacenara el nombre del producto*/
 		String nombre;
@@ -23,23 +24,12 @@ public class PrincipalArticulo {
 		/*Creamos una variable que almacenara el precio del articulo*/
 		double precio;
 		
-		/*Creamos un Scanner*/
-		Scanner sc = new Scanner(System.in);
-		
 		/*Creamos un bucle do while para que mientras la eleccion sea diferente a g seguir
 		 * repitiendo*/
 		do {
 			
-			/*Mostramos el menu al usuario*/
-			System.out.println("\n" + "Menu:");
-			System.out.println("a. Listado");
-			System.out.println("b. Alta");
-			System.out.println("c. Baja");
-			System.out.println("d. Modificacion");
-			System.out.println("e. Entrada de mercancia");
-			System.out.println("f. Salida de mercancia");
-			System.out.println("g. Salir");
-
+			/*Mostramos el menu llamando a la funcion*/
+			menu();
 
 			/*Pedimos al usuario que introduzca una opcion*/
 			System.out.println("\n" + "Introduce una opcion");
@@ -60,27 +50,8 @@ public class PrincipalArticulo {
 			/*Si la opcion es b añadimos un articulo*/
 			case "b" -> {
 				
-				/*Pedimos al usuario que introduzca el nombre del articulo*/
-				System.out.println("Introduce el nombre del articulo");
-				
-				/*Leemos el nombre del usuario*/
-				nombre = sc.nextLine();
-				
-				/*Pedimos al usuario que introduzca su precio*/
-				System.out.println("Introduce el precio del producto");
-				
-				/*Leemos el precio del producto*/
-				precio = sc.nextDouble();
-				
-				/*Pedimos al usuario que introduzca el stock del articulo*/
-				System.out.println("Introduce la cantidad del articulo");
-				
-				/*Leemos la cantidad del articulo*/
-				cantidad = sc.nextInt();
-				sc.nextLine();
-				
-				/*Añadimos los datos al articulo*/
-				articulo = new Articulo(nombre, precio, cantidad);
+				/*Creamos un articulo llamando a la funcion*/
+				articulo = creaArticulo();
 				
 				/*Llamamos a la funcion para añadir el articulo*/
 				if(GESTISIMAL.añadirArticulo(articulo)) {
@@ -94,12 +65,9 @@ public class PrincipalArticulo {
 			case "c" -> {
 				
 				/*Pedimos al usuario que introduzca el nombre del articulo*/
-				System.out.println("Introduce el nombre del articulo");
+				nombre = pideNombre();
 				
-				/*Leemos el nombre del usuario*/
-				nombre = sc.nextLine();
-				
-				/*Buscamos el articulo*/
+				/*Creamos un articulo con el nombre*/
 				articulo = new Articulo(nombre);
 				
 				/*Llamamos a la funcion para eliminar el articulo*/
@@ -114,17 +82,10 @@ public class PrincipalArticulo {
 			case "d" -> {
 				
 				/*Pedimos al usuario que introduzca el nombre del articulo*/
-				System.out.println("Introduce el nombre del articulo");
+				nombre = pideNombre();
 				
-				/*Leemos el nombre del usuario*/
-				nombre = sc.nextLine();
-				
-				/*Pedimos al usuario que introduzca su precio*/
-				System.out.println("Introduce el precio del producto");
-				
-				/*Leemos el precio del producto*/
-				precio = sc.nextDouble();
-				sc.nextLine();
+				/*Pedimos al usuario que introduzca su precio llamando a la funcion*/
+				precio = pidePrecio();
 				
 				/*Llamamos a la funcion para modificar el articulo*/
 				if(GESTISIMAL.modificarArticulo(nombre, precio)) {
@@ -138,10 +99,7 @@ public class PrincipalArticulo {
 			case "e" -> {
 				
 				/*Pedimos al usuario que introduzca el nombre del articulo*/
-				System.out.println("Introduce el nombre del articulo");
-				
-				/*Leemos el nombre del usuario*/
-				nombre = sc.nextLine();
+				nombre = pideNombre();
 				
 				/*Pedimos al usuario que introduzca la cantidad entrante del stock*/
 				System.out.println("Introduce la cantidad de entrada del articulo");
@@ -162,10 +120,7 @@ public class PrincipalArticulo {
 			case "f" -> {
 				
 				/*Pedimos al usuario que introduzca el nombre del articulo*/
-				System.out.println("Introduce el nombre del articulo");
-				
-				/*Leemos el nombre del usuario*/
-				nombre = sc.nextLine();
+				nombre = pideNombre();
 				
 				/*Pedimos al usuario que introduzca la cantidad de salida del stock*/
 				System.out.println("Introduce la cantidad de salida del articulo");
@@ -198,5 +153,82 @@ public class PrincipalArticulo {
 	
 		/*Cerramos el Scanner*/
 		sc.close();
+	}
+	
+	public static void menu() {
+		/*Mostramos el menu al usuario*/
+		System.out.println("\n" + "Menu:");
+		System.out.println("a. Listado");
+		System.out.println("b. Alta");
+		System.out.println("c. Baja");
+		System.out.println("d. Modificacion");
+		System.out.println("e. Entrada de mercancia");
+		System.out.println("f. Salida de mercancia");
+		System.out.println("g. Salir");
+	}
+	
+	public static Articulo creaArticulo() {
+		
+		/*Creamos un nuevo articulo*/
+		Articulo articulo;
+		
+		/*Creamos una variable para almacenar cuantos articulos hay de un producto*/
+		int cantidad;
+		
+		/*Creamos una variable que almacenara el nombre del producto*/
+		String nombre;
+		
+		/*Creamos una variable que almacenara el precio del articulo*/
+		double precio;
+		
+		/*Pedimos al usuario que introduzca el nombre del articulo llamando a la funcion*/
+		nombre = pideNombre();
+		
+		/*Pedimos al usuario que introduzca el precio del articulo llamando a la funcion*/
+		precio = pidePrecio();
+		
+		/*Pedimos al usuario que introduzca el stock del articulo*/
+		System.out.println("Introduce la cantidad del articulo");
+		
+		/*Leemos la cantidad del articulo*/
+		cantidad = sc.nextInt();
+		sc.nextLine();
+		
+		/*Añadimos los datos al articulo*/
+		articulo = new Articulo(nombre, precio, cantidad);
+		
+		/*Devolvemos el objeto articulo*/
+		return articulo;
+	}
+	
+	private static String pideNombre() {
+		
+		/*Creamos una variable que almacenara el nombre del producto*/
+		String nombre;
+		
+		/*Pedimos al usuario que introduzca el nombre del articulo*/
+		System.out.println("Introduce el nombre del articulo");
+		
+		/*Leemos el nombre del usuario*/
+		nombre = sc.nextLine();
+		
+		/*Devuelve el nombre*/
+		return nombre;
+	}
+	
+	private static double pidePrecio() {
+			
+		/*Creamos una variable que almacenara el precio del articulo*/
+		double precio;
+			
+		/*Pedimos al usuario que introduzca su precio*/
+		System.out.println("Introduce el precio del producto");
+		
+		/*Leemos el precio del producto*/
+		precio = sc.nextDouble();	
+		sc.nextLine();
+			
+		/*Devolvemos el precio del articulo*/
+		return precio;
 	}
 }

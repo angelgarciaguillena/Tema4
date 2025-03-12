@@ -108,7 +108,7 @@ public class GESTISIMAL {
 	 * @param nombre Nombre del articulo
 	 * @return Devuelve el articulo si se ha encontrado o null si no se ha encontrado
 	 */
-	public static Articulo buscarArticulo(String nombre) {
+	private static Articulo buscarArticulo(String nombre) {
 		
 		Articulo art = null;
 		

@@ -65,7 +65,7 @@ public class AlumnoCRUD {
 	 * @param nombre Nombre del alumno
 	 * @return Devuelve el alumno
 	 */
-	public static Alumno buscarAlumno(String nombre) {
+	private static Alumno buscarAlumno(String nombre) {
 		 
 		Alumno alumn = null;
 		
