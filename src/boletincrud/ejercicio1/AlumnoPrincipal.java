@@ -109,7 +109,7 @@ public class AlumnoPrincipal {
 				nombre = sc.nextLine();
 				
 				/*Buscamos al alumno*/
-				alumno = AlumnoCRUD.buscarAlumno(nombre);
+				alumno = new Alumno(nombre);
 
 				/* Borramos el alumno */
 				if (AlumnoCRUD.borrarAlumno(alumno)) {

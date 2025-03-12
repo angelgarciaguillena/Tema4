@@ -184,6 +184,7 @@ public class Pizza {
 	 * 
 	 * @return Devuelve la informacion de la pizza
 	 */
+	@Override
 	public String toString() {
 		
 		String cadena;
@@ -198,6 +199,7 @@ public class Pizza {
 	 * 
 	 * @return Devuelve si las pizzas son iguales
 	 */
+	@Override
 	public boolean equals(Object obj) {
 		
 		Pizza pizza2 = (Pizza) obj;

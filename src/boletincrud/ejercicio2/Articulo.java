@@ -1,5 +1,7 @@
 package boletincrud.ejercicio2;
 
+import java.util.Objects;
+
 public class Articulo {
 	
 	/**
@@ -42,6 +44,19 @@ public class Articulo {
 		
 		if(cuantosQuedan >= 0) {
 			this.cuantosQuedan = cuantosQuedan;
+		}
+	}
+	
+	/**
+	 * Constructor que inicializa el atributo nombre de la clase Articulo y comprueba
+	 * que el valor sea valido para almacenarlo
+	 * 
+	 * @param nombre Nombre del producto
+	 */
+	public Articulo(String nombre){
+		
+		if(nombre != null && !nombre.isEmpty() && nombre.length() < 20) {
+			this.nombre = nombre;
 		}
 	}
 	
@@ -161,9 +176,38 @@ public class Articulo {
 	 * 
 	 * @return Devuelve la cadena con la informacion
 	 */
+	@Override
 	public String toString() {
 		String cadena;
 		cadena = nombre + " - Precio: " + precio + "€ - IVA: " + Articulo.IVA + "% - PVP: " + getPVP() + "€ - Stock: " + cuantosQuedan + " unidades";
 		return cadena;
+	}
+	
+	/**
+	 * Metodo hash de la clase Articulo
+	 * 
+	 * @return Devuelve un objeto
+	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombre);
+	}
+	
+	/**
+	 * Metodo equals para comparar si los objetos son iguales
+	 * 
+	 * @return devuelve true si se ha realizado o false si no
+	 */
+	@Override
+	public boolean equals(Object obj) {
+		boolean igual = false;
+		
+		Articulo articulo = (Articulo) obj;
+		
+		if(this.nombre.equalsIgnoreCase(articulo.nombre)) {
+			igual = true;
+		}
+		
+		return igual;
 	}
 }

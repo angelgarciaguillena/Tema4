@@ -100,7 +100,7 @@ public class PrincipalArticulo {
 				nombre = sc.nextLine();
 				
 				/*Buscamos el articulo*/
-				articulo = GESTISIMAL.buscarArticulo(nombre);
+				articulo = new Articulo(nombre);
 				
 				/*Llamamos a la funcion para eliminar el articulo*/
 				if(GESTISIMAL.eliminarArticulo(articulo)) {

@@ -1,5 +1,7 @@
 package boletincrud.ejercicio1;
 
+import java.util.Objects;
+
 public class Alumno {
 	
 	/**
@@ -20,12 +22,24 @@ public class Alumno {
 	 */
 	public Alumno(String nombre, double notaMedia) {
 		
-		if(nombre != null) {
+		if(nombre != null && !nombre.isEmpty()) {
 			this.nombre = nombre;
 		}
 		
 		if(notaMedia >= 0) {
 			this.notaMedia = notaMedia;
+		}
+	}
+	
+	/**
+	 * Constructor que inicializa el atributo nombre de la clase Alumno y comprueba que es valido
+	 * 
+	 * @param nombre Nombre del alumno
+	 */
+	public Alumno(String nombre) {
+		
+		if(nombre != null && !nombre.isEmpty()) {
+			this.nombre = nombre;
 		}
 	}
 	
@@ -44,7 +58,7 @@ public class Alumno {
 	 * @param nombre Nombre del alumno
 	 */
 	public void setNombre(String nombre) {
-		if(nombre != null) {
+		if(nombre != null && !nombre.isEmpty()) {
 			this.nombre = nombre;
 		}
 	}
@@ -74,6 +88,7 @@ public class Alumno {
 	 * 
 	 * @return Cadena con la informacion del alumno
 	 */
+	@Override
 	public String toString() {
 		
 		String cadena;
@@ -84,20 +99,32 @@ public class Alumno {
 	}
 	
 	/**
-	 * Devolvemos si dos alumnos son iguales o no
+	 * Funcion hash de la clase Alumno
 	 * 
-	 * @return Devolvemos true si son iguales o false si no
+	 * @return Devuelve el objeto
 	 */
+	@Override
+	public int hashCode() {
+		return Objects.hash(nombre);
+	}
+	
+	/**
+	 * Metodo equals para comparar si los objetos son iguales
+	 * 
+	 * @return Devuelve true si son iguales o false si no lo son
+	 */
+	@Override
 	public boolean equals(Object obj) {
+		boolean igual = false;
 		
-		Alumno alumno2 = (Alumno) obj;
+		Alumno alumno;
 		
-		boolean sonIguales = false;
+		alumno = (Alumno) obj;
 		
-		if(this.nombre.equalsIgnoreCase(alumno2.nombre)) {
-			sonIguales = true;
+		if(this.nombre.equalsIgnoreCase(alumno.nombre)) {
+			igual = true;
 		}
 		
-		return sonIguales;
+		return igual;
 	}
 }
