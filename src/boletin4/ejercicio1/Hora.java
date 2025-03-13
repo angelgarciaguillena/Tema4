@@ -13,13 +13,23 @@ public class Hora {
 	private int minuto = 0;
 	
 	/**
+	 * Segundos de la hora
+	 */
+	private int segundo = 0;
+	
+	/**
 	 * Construcro que coumprueba si los valores de los atributos son correctos y si es
 	 * asi les asigna los valores
 	 * 
 	 * @param hora Horas
 	 * @param minuto Minutos
+	 * @param segundo Segundos
 	 */
-	public Hora(int hora, int minuto) {
+	public Hora(int hora, int minuto, int segundo) {
+		
+		if(segundo >= 0 && segundo <= 59) {
+			this.segundo = segundo;
+		}
 		
 		if(minuto >= 0 && minuto <= 59) {
 			this.minuto = minuto;
@@ -31,56 +41,85 @@ public class Hora {
 	}
 	
 	/**
-	 * Funcion para incrementar 1 minuto la hora
+	 * Funcion que devuelve las horas
+	 * 
+	 * @return Devuelve las horas
+	 */
+	public int getHora() {
+		return hora;
+	}
+
+	/**
+	 * Funcion que modifica las horas si el valor es valido
+	 * 
+	 * @param hora Horas
+	 */
+	public void setHora(int hora) {
+		if(hora >= 0 && hora <= 23) {
+			this.hora = hora;
+		}
+	}
+
+	/**
+	 * Funcion que devuelve los minutos
+	 * 
+	 * @return Devuelve los minutos
+	 */
+	public int getMinuto() {
+		return minuto;
+	}
+
+	/**
+	 * Funcion que modifica los minutos si el valor es valido
+	 * 
+	 * @param minuto Minuto
+	 */
+	public void setMinuto(int minuto) {
+		if(minuto >= 0 && minuto <= 59) {
+			this.minuto = minuto;
+		}
+	}
+	
+	/**
+	 * Funcion que devuelve los segundos
+	 * 
+	 * @return Devuelve los segundos
+	 */
+	public int getSegundo() {
+		return segundo;
+	}
+
+	/**
+	 * Funcion que modifica los segundos si el valor es valido
+	 * 
+	 * @param segundo Segundos
+	 */
+	public void setSegundo(int segundo) {
+		if(segundo >= 0 && segundo <= 59) {
+			this.segundo = segundo;
+		}
+	}
+
+	/**
+	 * Funcion para incrementar 1 segundo la hora
 	 */
 	public void inc() {
+		
+		if(segundo == 59) {
+			segundo = 0;
+		} else {
+			segundo++;
+		}
 		
 		if(minuto == 59) {
 			minuto = 0;
 			hora += 1;
-		} else {
-			minuto += 1;
-		}
+		} 
 		
 		if(hora >= 23) {
 			hora = 0;
 		}
-	}
-	
-	/**
-	 * Funcion para modificar las horas
-	 * 
-	 * @param hora Horas a la que queremos modificar
-	 * @return Devuelve true si se ha realizado o false si no se ha podido realizar
-	 */
-	public boolean setHora(int hora) {
-		boolean valido = false;
-		
-		if(hora >= 0 && hora <= 23) {
-			this.hora = hora;
-			valido = true;
-		}
-		
-		return valido;
-	}
-	
-	/**
-	 * Funcion para modificar los minutos
-	 * 
-	 * @param minuto Minutos al que queremos modificar
-	 * @return Devuelve true si es valida la operacion o false si no lo es
-	 */
-	public boolean setMinuto(int minuto) {
-		boolean valido = false;
-		
-		if(minuto >= 0 && minuto <= 59) {
-			this.minuto = minuto;
-			valido = true;
-		}
-		
-		return valido;
-	}
-	
+	}	
 	
 	/**
 	 * Funcion para mostrar la hora
@@ -89,20 +128,26 @@ public class Hora {
 	 */
 	@Override
 	public String toString() {
-		String horas = "";
-		String minutos = "";
+		String cadena = "";
 		
 		if(hora < 10) {
-			horas = "0" + hora;
+			cadena += "0" + hora + ":";
+		} else {
+			cadena += hora + ":";
 		}
 		
 		if(minuto < 10) {
-			minutos = "0" + minuto;
+			cadena += "0" + minuto + ":";
+		} else {
+			cadena += minuto + ":";
 		}
 		
+		if(segundo < 10) {
+			cadena += "0" + segundo;
+		} else {
+			cadena += segundo;
+		}
 		
-		return horas + ":" + minutos;
+		return cadena;
 	}
-
-	
 }
