@@ -14,7 +14,7 @@ public class CuentaCorriente {
 	private double saldo = 0;
 	
 	/*Nacionalidad de las personas*/
-	Nacionalidad nacionalidad = Nacionalidad.ESPAÑOLA;
+	private Nacionalidad nacionalidad = Nacionalidad.ESPAÑOLA;
 	
 	/*Nacionalidades posibles de las personas*/
 	enum Nacionalidad {
@@ -46,7 +46,7 @@ public class CuentaCorriente {
 	 * @param dni DNI de la persona
 	 * @param saldo Saldo de la persona
 	 */
-	public CuentaCorriente(String dni, int saldo) {
+	public CuentaCorriente(String dni, double saldo) {
 		
 		if(dni != null && dni.length() == 9) {
 			this.dni = dni;
@@ -65,7 +65,7 @@ public class CuentaCorriente {
 	 * @param nombre Nombre de la persona
 	 * @param saldo Saldo de la persona
 	 */
-	public CuentaCorriente(String dni, String nombre, int saldo) {
+	public CuentaCorriente(String dni, String nombre, double saldo) {
 		
 		if(dni != null && dni.length() == 9) {
 			this.dni = dni;
@@ -89,7 +89,7 @@ public class CuentaCorriente {
 	 * @param saldo Saldo de la persona
 	 * @param nacionalidad Nacionalidad de la persona
 	 */
-	public CuentaCorriente(String dni, String nombre, int saldo, String nacionalidad) {
+	public CuentaCorriente(String dni, String nombre, double saldo, String nacionalidad) {
 		
 		if(dni != null && dni.length() == 9) {
 			this.dni = dni;

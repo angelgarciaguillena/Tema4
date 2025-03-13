@@ -53,7 +53,8 @@ public class CuentaCorrienteCRUD {
 		CuentaCorriente cuenta = buscarCuenta(dni, nombre);
 		
 		if(cuenta != null) {
-			cuenta.setNacionalidad(nombre);
+			cuenta.setNacionalidad(nacionalidad);
+			modificado = true;
 		}
 		
 		return modificado;
@@ -68,12 +69,14 @@ public class CuentaCorrienteCRUD {
 	 * @return Devuelve true si se ha realizado o false si no se ha podido incrementar-
 	 */
 	public static boolean añadirSaldo(String dni, String nombre, double cambio) {
+		
 		boolean modificado = false;
 		
 		CuentaCorriente cuenta = buscarCuenta(dni, nombre);
 		
-		if(cuenta != null) {
+		if(cuenta != null && (cuenta.getSaldo() + cambio) > cuenta.getSaldo()) {
 			cuenta.setSaldo(cuenta.getSaldo() + cambio);
+			modificado = true;
 		}
 		
 		return modificado;
@@ -88,12 +91,14 @@ public class CuentaCorrienteCRUD {
 	 * @return Devuelve true si se ha realizado la reduccion y false si no se ha podido realizar
 	 */
 	public static boolean eliminarSaldo(String dni, String nombre, double cambio) {
+		
 		boolean modificado = false;
 		
 		CuentaCorriente cuenta = buscarCuenta(dni, nombre);
 		
-		if(cuenta != null) {
+		if(cuenta != null && (cuenta.getSaldo() - cambio) >= 0) {
 			cuenta.setSaldo(cuenta.getSaldo() - cambio);
+			modificado = true;
 		}
 		
 		return modificado;
@@ -110,7 +115,7 @@ public class CuentaCorrienteCRUD {
 		CuentaCorriente cuenta = null;
 		
 		for(CuentaCorriente cuentasB : cuentas) {
-			if(cuentasB.getDni().equalsIgnoreCase(nombre) && cuentasB.getNombre().equalsIgnoreCase(nombre)) {
+			if(cuentasB.getDni().equalsIgnoreCase(dni) && cuentasB.getNombre().equalsIgnoreCase(nombre)) {
 				cuenta = cuentasB;
 			}
 		}

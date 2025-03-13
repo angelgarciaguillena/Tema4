@@ -10,17 +10,17 @@ public class Pizza {
 	/**
 	 * Tamaño de la pizza
 	 */
-	Tamaño tamaño = Tamaño.MEDIANA;
+	private Tamaño tamaño = Tamaño.MEDIANA;
 	
 	/**
 	 * Tipo de pizza
 	 */
-	Tipo tipo = Tipo.MARGARITA;
+	private Tipo tipo = Tipo.MARGARITA;
 	
 	/**
 	 * Estado del pedido
 	 */
-	Estado estado = Estado.PEDIDA;
+	private Estado estado = Estado.PEDIDA;
 	
 	/**
 	 * Posibles valores del tamaño de la pizza
