@@ -73,6 +73,12 @@ public class Fraccion {
 		}
 	}
 	
+	/**
+	 * Funcion que sirve para sumar dos fracciones y devuelve el resultado de la suma
+	 * 
+	 * @param fraccion2 Fraccion para sumar
+	 * @return Devuelve el resultado de la operacion
+	 */
 	public Fraccion sumaFracciones(Fraccion fraccion2) {
 		Fraccion resultado = new Fraccion();
 		
@@ -87,6 +93,12 @@ public class Fraccion {
 		return resultado;
 	}
 	
+	/**
+	 * Funcion que sirve para restar dos fracciones y devuelve el resultado de la resta
+	 * 
+	 * @param fraccion2 Fraccion para restar
+	 * @return Devuelve el resultado de la operacion
+	 */
 	public Fraccion restaFracciones(Fraccion fraccion2) {
 		Fraccion resultado = new Fraccion();
 		
@@ -101,6 +113,12 @@ public class Fraccion {
 		return resultado;
 	}
 	
+	/**
+	 * Funcion que sirve para multiplicar dos fracciones y devuelve el resultado de la multiplicacion
+	 * 
+	 * @param fraccion2 Fraccion para multiplicar
+	 * @return Devuelve el resultado de la operacion
+	 */
 	public Fraccion multiplicaFracciones(Fraccion fraccion2) {
 		Fraccion resultado = new Fraccion();
 		
@@ -111,6 +129,12 @@ public class Fraccion {
 		return resultado;
 	}
 	
+	/**
+	 * Funcion que sirve para dividir dos fracciones y devuelve el resultado de la division
+	 * 
+	 * @param fraccion2 Fraccion para dividir
+	 * @return Devuelve el resultado de la operacion
+	 */
 	public Fraccion divideFraccion(Fraccion fraccion2) {
 		Fraccion resultado = new Fraccion();
 		
@@ -121,15 +145,31 @@ public class Fraccion {
 		return resultado;
 	}
 	
+	/**
+	 * Funcion que se encarga de simplificar la fraccion 
+	 */
 	public void simplificaFraccion() {
-		if (this.numerador != 0) {
-			for (int i = 2; i <= Math.min(this.numerador, this.denominador); i++) {
-				while (this.numerador % i == 0 && this.denominador % i == 0) {
-					this.numerador /= i;
-					this.denominador /= i;
-				}
-			}
-		}
+	    if (numerador != 0) {
+	        int mcd = calcularMCD(numerador, denominador);
+	        numerador /= mcd;
+	        denominador /= mcd;
+	    }
+	}
+
+	/**
+	 * Funcion que se encarga de calcular el maximo comun divisor
+	 * 
+	 * @param a Numerador de la fraccion
+	 * @param b Denominador de la fraccion
+	 * @returnDevuelve el maximo comun divisor
+	 */
+	private int calcularMCD(int a, int b) {
+	    while (b != 0) {
+	        int temp = b;
+	        b = a % b;
+	        a = temp;
+	    }
+	    return Math.abs(a);
 	}
 	
 	/**
@@ -141,7 +181,4 @@ public class Fraccion {
 	public String toString() {
 		return numerador + "/" + denominador;
 	}
-	
-	
-	
 }
