@@ -82,8 +82,54 @@ public class Fraccion {
 		} else {
 			resultado.numerador = this.numerador + fraccion2.numerador;
 		}
+		resultado.simplificaFraccion();
 		
 		return resultado;
+	}
+	
+	public Fraccion restaFracciones(Fraccion fraccion2) {
+		Fraccion resultado = new Fraccion();
+		
+		if(this.denominador != fraccion2.denominador) {
+			resultado.denominador = this.denominador * fraccion2.denominador;
+			resultado.numerador = (this.numerador * fraccion2.denominador) - (fraccion2.numerador * this.denominador);
+		} else {
+			resultado.numerador = this.numerador - fraccion2.numerador;
+		}
+		resultado.simplificaFraccion();
+		
+		return resultado;
+	}
+	
+	public Fraccion multiplicaFracciones(Fraccion fraccion2) {
+		Fraccion resultado = new Fraccion();
+		
+		resultado.numerador = this.numerador * fraccion2.numerador;
+		resultado.denominador = this.denominador * fraccion2.denominador;
+		resultado.simplificaFraccion();
+		
+		return resultado;
+	}
+	
+	public Fraccion divideFraccion(Fraccion fraccion2) {
+		Fraccion resultado = new Fraccion();
+		
+		resultado.numerador = this.numerador * fraccion2.denominador;
+		resultado.denominador = this.denominador * fraccion2.numerador;
+		resultado.simplificaFraccion();
+		
+		return resultado;
+	}
+	
+	public void simplificaFraccion() {
+		if (this.numerador != 0) {
+			for (int i = 2; i <= Math.min(this.numerador, this.denominador); i++) {
+				while (this.numerador % i == 0 && this.denominador % i == 0) {
+					this.numerador /= i;
+					this.denominador /= i;
+				}
+			}
+		}
 	}
 	
 	/**
