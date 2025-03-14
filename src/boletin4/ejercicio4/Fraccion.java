@@ -146,22 +146,11 @@ public class Fraccion {
 	}
 	
 	/**
-	 * Funcion que se encarga de simplificar la fraccion 
-	 */
-	public void simplificaFraccion() {
-	    if (numerador != 0) {
-	        int mcd = calcularMCD(numerador, denominador);
-	        numerador /= mcd;
-	        denominador /= mcd;
-	    }
-	}
-
-	/**
 	 * Funcion que se encarga de calcular el maximo comun divisor
 	 * 
 	 * @param a Numerador de la fraccion
 	 * @param b Denominador de la fraccion
-	 * @returnDevuelve el maximo comun divisor
+	 * @return Devuelve el maximo comun divisor
 	 */
 	private int calcularMCD(int a, int b) {
 	    while (b != 0) {
@@ -172,6 +161,17 @@ public class Fraccion {
 	    return Math.abs(a);
 	}
 	
+	/**
+	 * Funcion que se encarga de simplificar la fraccion 
+	 */
+	public void simplificaFraccion() {
+	    if (numerador != 0) {
+	        int mcd = calcularMCD(numerador, denominador);
+	        numerador /= mcd;
+	        denominador /= mcd;
+	    }
+	}
+
 	/**
 	 * Funcion que devuelve una cadena que contiene la fraccion
 	 * 
